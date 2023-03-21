@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="NewDataSet" targetNamespace="http://www.w3.org/2005/Atom" xmlns:mstns="http://www.w3.org/2005/Atom" xmlns="http://www.w3.org/2005/Atom" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified" xmlns:app1="http://naesb.org/espi">
+  <xs:import namespace="http://naesb.org/espi" schemaLocation="stylefordte_app1.xsd" />
+  <xs:element name="feed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="id" type="xs:string" minOccurs="0" />
+        <xs:element name="title" type="xs:string" minOccurs="0" />
+        <xs:element name="updated" type="xs:string" minOccurs="0" />
+        <xs:element name="entry" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" type="xs:string" minOccurs="0" />
+              <xs:element name="title" type="xs:string" minOccurs="0" />
+              <xs:element name="published" type="xs:string" minOccurs="0" />
+              <xs:element name="updated" type="xs:string" minOccurs="0" />
+              <xs:element name="link" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:attribute name="href" form="unqualified" type="xs:string" />
+                  <xs:attribute name="rel" form="unqualified" type="xs:string" />
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="content" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element ref="app1:MeterReading" minOccurs="0" />
+                    <xs:element ref="app1:IntervalBlock" />
+                    <xs:element ref="app1:ReadingType" />
+                    <xs:element ref="app1:UsagePoint" />
+                    <xs:element ref="app1:LocalTimeParameters" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="NewDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element ref="feed" />
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

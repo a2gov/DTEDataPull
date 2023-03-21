@@ -1,0 +1,75 @@
+<?xml version="1.0" standalone="yes"?>
+<xs:schema targetNamespace="http://naesb.org/espi" xmlns:mstns="http://www.w3.org/2005/Atom" xmlns="http://naesb.org/espi" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" attributeFormDefault="qualified" elementFormDefault="qualified" xmlns:app1="http://naesb.org/espi">
+  <xs:import namespace="http://www.w3.org/2005/Atom" schemaLocation="stylefordte.xsd" />
+  <xs:element name="MeterReading" type="xs:string" />
+  <xs:element name="IntervalBlock">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="interval" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="duration" type="xs:string" minOccurs="0" />
+              <xs:element name="start" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="IntervalReading" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="value" type="xs:string" minOccurs="0" />
+              <xs:element name="timePeriod" minOccurs="0" maxOccurs="unbounded">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="duration" type="xs:string" minOccurs="0" />
+                    <xs:element name="start" type="xs:string" minOccurs="0" />
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ReadingType">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="accumulationBehaviour" type="xs:string" minOccurs="0" />
+        <xs:element name="commodity" type="xs:string" minOccurs="0" />
+        <xs:element name="currency" type="xs:string" minOccurs="0" />
+        <xs:element name="dataQualifier" type="xs:string" minOccurs="0" />
+        <xs:element name="defaultQuality" type="xs:string" minOccurs="0" />
+        <xs:element name="flowDirection" type="xs:string" minOccurs="0" />
+        <xs:element name="intervalLength" type="xs:string" minOccurs="0" />
+        <xs:element name="kind" type="xs:string" minOccurs="0" />
+        <xs:element name="phase" type="xs:string" minOccurs="0" />
+        <xs:element name="powerOfTenMultiplier" type="xs:string" minOccurs="0" />
+        <xs:element name="timeAttribute" type="xs:string" minOccurs="0" />
+        <xs:element name="uom" type="xs:string" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="UsagePoint">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="ServiceCategory" minOccurs="0" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="kind" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="LocalTimeParameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="dstEndRule" type="xs:string" minOccurs="0" />
+        <xs:element name="dstOffset" type="xs:string" minOccurs="0" />
+        <xs:element name="dstStartRule" type="xs:string" minOccurs="0" />
+        <xs:element name="tzOffset" type="xs:string" minOccurs="0" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

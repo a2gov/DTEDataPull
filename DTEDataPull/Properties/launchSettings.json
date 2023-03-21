@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DTEDataPull": {
+      "commandName": "Project",
+      "commandLineArgs": "https://usagedata.dteenergy.com/link/46AF3B42-8FAC-4191-B70D-6FC9A5CBDCC6 \"1320 Baldwin Ave\" \"9100 068 1015 4\" \"Geddes Dam\r\n\"\r\n"
+    }
+  }
+}
